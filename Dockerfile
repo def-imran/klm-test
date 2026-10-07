@@ -1,12 +1,8 @@
-FROM python:3.13
+FROM ubuntu:22.04
 
-WORKDIR /app
+WORKDIR /klm/app
 
-COPY requirements.txt ./
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
+RUN apt-get update && appt-get install -y  openjdk-17-jdk  wget  unzip && rm -rf /var/lib/apt/lists/*
 
 USER root
 
