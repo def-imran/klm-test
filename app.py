@@ -1,1 +1,0 @@
-print("hallo vanuit linux")

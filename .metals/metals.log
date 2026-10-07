@@ -1,0 +1,726 @@
+2026.10.07 13:23:11 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:23:11 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:23:11 INFO  Memory monitor started
+2026.10.07 13:23:11 INFO  Memory monitor started
+2026.10.07 13:23:18 WARN  resetting database: Some(/workspaces/klm-test/.metals/metals.h2.db)
+2026.10.07 13:23:21 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:23:21 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:23:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:23:23 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:23:23 WARN  Build server is not auto-connectable.
+2026.10.07 13:23:23 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:23:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:23:24 WARN  resetting database: Some(/workspaces/klm-test/.metals/metals.h2.db)
+2026.10.07 13:23:25 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:23:25 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:23:26 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:23:26 ERROR You might need to remove .metals/metals.mv.db file and restart Metals.
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DEPENDENCY_SOURCE" not found; SQL statement:
+select build_target_uri from dependency_source where text_document_uri = ?; [42102-250]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8049)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8020)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7999)
+	at org.h2.command.Parser.readTablePrimary(Parser.java:1772)
+	at org.h2.command.Parser.readTableReference(Parser.java:2252)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2705)
+	at org.h2.command.Parser.parseSelect(Parser.java:2813)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2695)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2550)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2529)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2522)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2515)
+	at org.h2.command.Parser.parseQuery(Parser.java:2482)
+	at org.h2.command.Parser.parsePrepared(Parser.java:613)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:648)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:564)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1161)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:315)
+	at scala.meta.internal.metals.JdbcEnrichments$XtensionConnection.query(JdbcEnrichments.scala:47)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:27)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.ReferenceProvider.onChange(ReferenceProvider.scala:108)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:90)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:90)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:90)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:86)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:106)
+	at java.util.HashMap.compute(HashMap.java:1325)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:3087)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:93)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$didOpen$7(MetalsLspService.scala:788)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.lang.Thread.run(Thread.java:1474)
+
+2026.10.07 13:23:27 INFO  time: code lens generation in 3.62s
+2026.10.07 13:23:30 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:31 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:23:31 WARN  Build server is not auto-connectable.
+2026.10.07 13:23:32 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:23:32 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:23:36 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:23:36 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:23:40 WARN  no build target for: /workspaces/klm-test/test.java
+Oct 07, 2026 1:23:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2026.10.07 13:23:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:44 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:23:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5
+2026.10.07 13:23:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:23:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+2026.10.07 13:23:47 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:23:58 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:23:58 INFO  Memory monitor started
+2026.10.07 13:24:00 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:24:02 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:24:02 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:24:02 WARN  Build server is not auto-connectable.
+2026.10.07 13:24:02 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:24:02 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:24:04 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:24:20 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:24:20 INFO  Memory monitor started
+2026.10.07 13:24:23 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:24:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:24:25 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:24:25 WARN  Build server is not auto-connectable.
+2026.10.07 13:24:25 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:24:27 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:24:27 INFO  time: initialize in 0.34s
+2026.10.07 13:24:28 INFO  Memory monitor started
+2026.10.07 13:24:29 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:24:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:24:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:24:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:24:39 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:24:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:24:42 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:24:42 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:24:43 WARN  Build server is not auto-connectable.
+2026.10.07 13:24:43 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:24:43 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:24:46 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:24:47 INFO  time: code lens generation in 3.96s
+2026.10.07 13:24:47 INFO  time: code lens generation in 3.98s
+2026.10.07 13:24:51 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:24:51 INFO  time: initialize in 0.12s
+2026.10.07 13:24:51 INFO  Memory monitor started
+2026.10.07 13:24:54 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:24:56 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:24:56 WARN  Build server is not auto-connectable.
+2026.10.07 13:24:57 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:24:57 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:25:00 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:25:02 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:25:14 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:25:15 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:25:14 INFO  Memory monitor started
+2026.10.07 13:25:15 INFO  time: initialize in 0.13s
+2026.10.07 13:25:15 INFO  Memory monitor started
+2026.10.07 13:25:18 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:25:18 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:25:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:25:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:25:19 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:25:20 WARN  Build server is not auto-connectable.
+2026.10.07 13:25:20 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:25:20 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:25:23 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:25:23 INFO  time: code lens generation in 3.09s
+2026.10.07 13:25:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:25:24 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:25:24 WARN  Build server is not auto-connectable.
+2026.10.07 13:25:24 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:25:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:25:27 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:25:29 INFO  time: code lens generation in 5.24s
+2026.10.07 13:25:42 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:25:43 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:25:43 INFO  time: initialize in 0.15s
+2026.10.07 13:25:43 INFO  time: initialize in 0.15s
+2026.10.07 13:25:43 INFO  Memory monitor started
+2026.10.07 13:25:42 INFO  Memory monitor started
+2026.10.07 13:25:46 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:25:46 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:25:47 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:25:47 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:25:48 WARN  Build server is not auto-connectable.
+2026.10.07 13:25:47 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:25:48 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:25:48 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:25:48 WARN  Build server is not auto-connectable.
+2026.10.07 13:25:48 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:25:48 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:25:50 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:25:51 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:25:51 INFO  time: code lens generation in 3.35s2026.10.07 13:25:51 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+
+2026.10.07 13:26:03 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:26:03 INFO  Memory monitor started
+2026.10.07 13:26:06 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:26:07 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2026.10.07 13:26:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:11 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:26:11 WARN  Build server is not auto-connectable.
+2026.10.07 13:26:11 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:26:11 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:12 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:12 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:13 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:26:13 INFO  time: code lens generation in 1.69s
+2026.10.07 13:26:14 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:14 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:18 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:18 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:26 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:26:26 INFO  Memory monitor started
+2026.10.07 13:26:27 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:26:27 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:28 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:26:28 WARN  Build server is not auto-connectable.
+2026.10.07 13:26:28 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:26:30 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:26:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2026.10.07 13:26:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6
+2026.10.07 13:26:33 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+2026.10.07 13:26:33 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+2026.10.07 13:26:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:37 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:44 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:44 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:46 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:46 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:47 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:47 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:53 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:26:53 INFO  Memory monitor started
+2026.10.07 13:26:55 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:26:55 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:55 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:26:55 WARN  Build server is not auto-connectable.
+2026.10.07 13:26:55 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:26:57 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/test.java. Output:
+
+2026.10.07 13:26:58 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:26:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2026.10.07 13:26:58 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:59 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:26:59 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:01 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:01 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:01 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:02 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:04 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:04 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:06 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:06 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:07 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:08 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:08 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:11 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:11 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:13 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:13 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:15 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:15 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:17 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:17 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:21 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:21 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:29 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:29 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:36 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:36 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:52 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:52 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:56 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:56 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:59 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:27:59 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:01 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:01 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:04 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:04 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:05 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:05 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:08 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:08 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:10 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:12 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:12 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:14 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:14 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:17 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:17 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:22 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:22 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:28 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:28 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:30 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:30 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:32 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:32 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:37 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:37 INFO  Shutting down server
+2026.10.07 13:28:37 INFO  Memory monitor stopped
+2026.10.07 13:28:37 INFO  shutting down Metals
+2026.10.07 13:28:37 INFO  Exiting server
+2026.10.07 13:28:37 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:39 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:43 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:45 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:49 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:52 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:52 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:56 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:56 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:58 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:28:58 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:00 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:00 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:05 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:05 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:07 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:07 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:09 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:09 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:11 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:11 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:13 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:13 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:15 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:15 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:18 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:18 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:20 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:20 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:22 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:22 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:29:28 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:28 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:29:28 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:29:28 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:29:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 149
+2026.10.07 13:29:29 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:31 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:31 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:33 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:33 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:35 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:35 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:38 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:38 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:40 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:40 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:42 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:42 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:44 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:44 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:46 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:46 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:48 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:48 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:50 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:50 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:53 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:53 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:55 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:55 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:57 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:57 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:59 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:29:59 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:03 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:03 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:06 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:06 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:08 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:08 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:10 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:10 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:12 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:12 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:16 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:16 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:25 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:25 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:26 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:26 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:29 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:29 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:31 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:31 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:33 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:33 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:35 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:35 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:36 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:36 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:39 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:39 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:41 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:41 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:43 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:43 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:45 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:45 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:46 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:46 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:49 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:49 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:51 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:51 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:53 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:53 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:56 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:56 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:58 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:30:58 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:00 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:00 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:04 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:04 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:06 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:06 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:08 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:08 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:13 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:13 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:15 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:15 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:17 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:17 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:23 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:26 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:26 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:28 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:28 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:30 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:30 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:32 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:32 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:34 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:34 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:36 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:36 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:39 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:39 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:41 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:41 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:43 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:43 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:45 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:45 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:47 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:47 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:50 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:50 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:51 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:51 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:54 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:54 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:56 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:56 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:58 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:31:58 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:01 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:03 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:03 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:05 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:05 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:07 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:07 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:09 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:09 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:16 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:16 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:18 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:18 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:21 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:22 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:22 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:24 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:25 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:25 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:25 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:25 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:25 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:27 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:28 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:28 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:32:28 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:28 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:33 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:33 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:34 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:35 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:37 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:32:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 364
+2026.10.07 13:32:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:32:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:33:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:33:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.10.07 13:33:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:33:31 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:33:31 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:33:59 INFO  Started: Metals version 1.6.9 in folders '/workspaces/klm-test' for client Visual Studio Code 1.141.0.
+2026.10.07 13:34:00 INFO  time: initialize in 0.11s
+2026.10.07 13:33:59 INFO  Memory monitor started
+2026.10.07 13:34:02 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 13:34:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:03 WARN  no build tool detected in workspace '/workspaces/klm-test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.07 13:34:04 WARN  Build server is not auto-connectable.
+2026.10.07 13:34:04 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:34:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:09 INFO  time: code lens generation in 5.76s
+2026.10.07 13:34:10 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:34:10 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:34:10 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/BasicSimulation.java. Output:
+
+2026.10.07 13:34:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+2026.10.07 13:34:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+2026.10.07 13:34:11 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15
+Oct 07, 2026 1:34:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+2026.10.07 13:34:12 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:13 WARN  no build target for: /workspaces/klm-test/test.java
+Oct 07, 2026 1:34:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+2026.10.07 13:34:12 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+2026.10.07 13:34:14 WARN  no build target for: /workspaces/klm-test/BasicSimulation.java
+2026.10.07 13:34:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:34:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22
+2026.10.07 13:34:14 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:34:16 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:34:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 32
+2026.10.07 13:34:19 WARN  no build target for: /workspaces/klm-test/test.java
+2026.10.07 13:34:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:22 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:23 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:34:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 40
+2026.10.07 13:34:23 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:23 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:26 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:27 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:27 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:33 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:38 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:40 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:41 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:50 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:51 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:51 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:34:54 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:36:48 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:38:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:38:03 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:38:38 INFO  Shutting down server
+2026.10.07 13:38:38 INFO  Memory monitor stopped
+2026.10.07 13:38:38 INFO  shutting down Metals
+2026.10.07 13:38:38 INFO  Exiting server
+2026.10.07 13:40:19 INFO  no build target found for /workspaces/klm-test/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:40:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+Oct 07, 2026 1:40:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 65
+2026.10.07 13:40:19 WARN  no build target for: /workspaces/klm-test/tests/gatling/src/test/java/com/example/performance/BasicSimulation.java
+2026.10.07 13:40:19 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:40:20 WARN  Running javac-semanticdb failed for file:///workspaces/klm-test/tests/gatling/src/test/java/com/example/performance/BasicSimulation.java. Output:
+
+2026.10.07 13:40:37 INFO  no build target found for /workspaces/klm-test/test.java. Using fallback presentation compiler.
+2026.10.07 13:40:37 INFO  no build target found for /workspaces/klm-test/tests/gatling/src/test/java/com/example/performance/BasicSimulation.java. Using fallback presentation compiler.
+2026.10.07 13:40:38 WARN  no build target for: /workspaces/klm-test/tests/gatling/src/test/java/com/example/performance/BasicSimulation.java
+Oct 07, 2026 1:40:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 67
+2026.10.07 13:40:38 INFO  no build target found for /workspaces/klm-test/tests/gatling/src/test/java/com/example/performance/BasicSimulation.java. Using fallback presentation compiler.
+Oct 07, 2026 1:41:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:41:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:41:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:41:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:41:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Oct 07, 2026 1:41:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
